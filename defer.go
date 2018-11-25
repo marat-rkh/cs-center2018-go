@@ -5,16 +5,17 @@ import (
 	"os"
 )
 
-func main() {
-	file := createFile("./some.txt")
-	defer file.Close()
-	fmt.Fprintln(file, "data")
-}
-
-func createFile(p string) *os.File {
-	file, err := os.Create(p)
+func writeFile(data []string) {
+	file, err := os.Create("./some.txt")
 	if err != nil {
 		os.Exit(1)
 	}
-	return file
+	defer file.Close() // !!!
+	if len(data) == 0 {
+		fmt.Println("nothing to write")
+		return
+	}
+	for _, s := range data {
+		fmt.Fprintln(file, s)
+	}
 }
