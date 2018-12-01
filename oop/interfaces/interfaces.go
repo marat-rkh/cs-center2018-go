@@ -23,6 +23,6 @@ func joinChat(nn NickNamed) {
 }
 
 func interfaces() {
-	p := person{name: "Bogdan", age: 27}
+	p := person{name: "Bogdan", age: 26}
 	joinChat(p)
 }
