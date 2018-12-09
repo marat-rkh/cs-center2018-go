@@ -21,12 +21,12 @@ func updateRadius(p *circle) {
 	p.radius += 1 // No special syntax for pointers, just '.'
 }
 
-func valueNotEscape() {
+func valueDoesNotEscape() {
 	c := circle{center: point{1, 1}, radius: 1}
 	getRadius(c)
 }
 
-func pointerNotEscape() {
+func pointerDoesNotEscape() {
 	c := circle{center: point{1, 1}, radius: 1}
 	updateRadius(&c)
 }
