@@ -1,4 +1,4 @@
-package main
+package basic
 
 import "fmt"
 
@@ -21,5 +21,3 @@ func shortVars() {
 	r := '汉'
 	fmt.Println(b, s, i, f64, r)
 }
-
-// TODO constants
