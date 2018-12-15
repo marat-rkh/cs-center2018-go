@@ -24,5 +24,5 @@ func methods() {
 	fmt.Println(emp.person.name, emp.person.age, emp.jobTitle)
 	fmt.Println(emp.name, emp.age, emp.jobTitle)
 	fmt.Println(emp.NickName())
-	var _ person = employee{}
+	var _ person = emp
 }
