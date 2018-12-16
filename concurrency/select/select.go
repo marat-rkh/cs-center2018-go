@@ -8,7 +8,7 @@ import (
 func main() {
 	even := make(chan int)
 	odd := make(chan int)
-	done := make(chan struct{})
+	done := make(chan bool)
 	go produceEven(even)
 	go produceOdd(odd)
 	go timeout(done)
@@ -39,7 +39,7 @@ func produceOdd(nums chan int) {
 	}
 }
 
-func timeout(done chan struct{}) {
+func timeout(done chan bool) {
 	time.Sleep(2 * time.Second)
-	done <- struct{}{}
+	done <- true
 }
